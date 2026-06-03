@@ -6,11 +6,8 @@ A beginner-friendly command-line social media content generator using LangChain 
 
 - Prompts for platform, topic, and tone
 - Supports Meta, Instagram, LinkedIn, and YouTube
-- Generates a social media post using your choice of:
-  - **OpenAI** (ChatGPT via API)
-  - **NVIDIA** (free API endpoint)
-  - **Ollama** (local 8B models, completely free and offline)
-- Keeps API keys private using `.env`
+- Generates a social media post using local Ollama models (free and offline)
+- Keeps configuration private using `.env`
 
 ## Setup
 
@@ -27,61 +24,32 @@ A beginner-friendly command-line social media content generator using LangChain 
    pip install -r requirements.txt
    ```
 
-3. Configure `.env` for your chosen provider:
+3. Configure `.env` for Ollama:
 
-   ### Option A: OpenAI
-   ```text
-   API_PROVIDER=openai
-   API_KEY=your_openai_api_key_here
-   MODEL_NAME=openai:gpt-4o-mini
-   ```
-
-   ### Option B: NVIDIA Free API
-   ```text
-   API_PROVIDER=nvidia
-   API_KEY=your_nvidia_api_key_here
-   NVIDIA_API_URL=https://api.nvidia.com/v1/chat/completions
-   MODEL_NAME=nvidia-model-name
-   ```
-
-   ### Option C: Ollama (Local - Recommended for Free & Offline)
-   First, install Ollama from [ollama.ai](https://ollama.ai), then:
    ```text
    API_PROVIDER=ollama
    OLLAMA_BASE_URL=http://localhost:11434
-   MODEL_NAME=llama2:8b
+   MODEL_NAME=tinyllama
    ```
 
-   Available 8B models on Ollama:
-   - `llama2:8b`
-   - `mistral:8b`
-   - `neural-chat:8b`
-   - `zephyr:8b`
-   - `orca:8b`
+   Or use another local Ollama model you have installed.
 
 ## Usage
 
-### Using Ollama
 1. Start Ollama server:
    ```powershell
    ollama serve
    ```
 
-2. In another terminal, download your model:
+2. In another terminal, download the model if needed:
    ```powershell
-   ollama pull llama2:8b
+   ollama pull tinyllama
    ```
 
 3. Run the generator:
    ```powershell
    python socialgen.py
    ```
-
-### Using OpenAI or NVIDIA
-Just run:
-```powershell
-python socialgen.py
-```
 
 Then enter:
 - Platform: Meta, Instagram, LinkedIn, or YouTube
