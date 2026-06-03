@@ -1,6 +1,6 @@
 # SocialGen
 
-A beginner-friendly command-line social media content generator using LangChain and your choice of API providers.
+A beginner-friendly command-line social media content generator using local Ollama models.
 
 ## Features
 
@@ -58,6 +58,6 @@ Then enter:
 
 ## Notes
 
-- API keys are never printed or exposed.
+- No external API key is required for Ollama.
 - The script exits with an error if configuration is missing.
 - Ollama runs completely offline and is free.
