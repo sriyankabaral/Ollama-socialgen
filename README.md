@@ -29,7 +29,7 @@ A beginner-friendly command-line social media content generator using local Olla
    ```text
    API_PROVIDER=ollama
    OLLAMA_BASE_URL=http://localhost:11434
-   MODEL_NAME=tinyllama
+   MODEL_NAME=llama3:8b
    ```
 
    Or use another local Ollama model you have installed.
@@ -43,7 +43,7 @@ A beginner-friendly command-line social media content generator using local Olla
 
 2. In another terminal, download the model if needed:
    ```powershell
-   ollama pull tinyllama
+   ollama pull llama3:8b
    ```
 
 3. Run the generator:
